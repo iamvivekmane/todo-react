@@ -29,26 +29,48 @@ function App() {
   }
 
 
-  const handleAdd = () => {
-    setTodos([...todos, { id: uuidv4(), todo, isCompleted: false }])
-    setTodo("")
+  // const handleAdd = () => {
+  //   setTodos([...todos, { id: uuidv4(), todo, isCompleted: false }])
+  //   setTodo("")
 
+  // }
+
+  // const handleChange = (e) => {
+  //   setTodo(e.target.value)
+  // }
+
+  // const handleCheckbox = (e) => {
+  //   let id = e.target.name
+  //   let index = todos.findIndex(item => {
+  //     return item.id == id;
+  //   })
+  //   let newTodos = [...todos];
+  //   newTodos[index].isCompleted = !newTodos[index].isCompleted
+  //   setTodos(newTodos)
+  // }
+
+
+  // Updated code
+    const handleAdd= ()=>{
+    setTodos([...todos, {id: uuidv4(), todo, isCompleted: false}])
+    setTodo("") 
+    saveToLS()
   }
-
-  const handleChange = (e) => {
+  
+  const handleChange= (e)=>{ 
     setTodo(e.target.value)
   }
 
-  const handleCheckbox = (e) => {
-    let id = e.target.name
-    let index = todos.findIndex(item => {
-      return item.id == id;
-    })
+  const handleCheckbox = (e) => { 
+    let id = e.target.name;  
+    let index = todos.findIndex(item=>{
+      return item.id === id;
+    }) 
     let newTodos = [...todos];
-    newTodos[index].isCompleted = !newTodos[index].isCompleted
+    newTodos[index].isCompleted = !newTodos[index].isCompleted;
     setTodos(newTodos)
+    saveToLS()
   }
-
 
   return (
     <>
