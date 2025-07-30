@@ -21,12 +21,3 @@ Welcome to **vTask** – a sleek and simple React-based Todo List App that helps
 - 💾 localStorage for data persistence
 - 🎯 Icons from `react-icons` (FontAwesome & Material Icons)
 
-## 🚀 Getting Started
-
-Clone the project and run it locally:
-
-```bash
-git clone https://github.com/yourusername/vTask.git
-cd vTask
-npm install
-npm run dev
